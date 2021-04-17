@@ -1,0 +1,7 @@
+@use '../abstracts' as *;
+.footer {
+  z-index: 10;
+  color: $dark;
+  height: 5rem;
+  @include flex-ctr;
+}

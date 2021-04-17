@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+@use '../base/variables' as *;
+
+.navbar {
+  @include flex-ctr;
+  .innerNav {
+    height: 5rem;
+    color: $light;
+    z-index: 10;
+    @include flex-bw;
+    ul {
+      display: flex;
+      gap: 1rem;
+      @include media($tablet) {
+        display: none;
+      }
+    }
+    max-width: $laptop;
+    @include media($laptop) {
+      margin: 0 $sideMarginLaptop;
+    }
+    @include media($tablet) {
+      margin: 0 $sideMarginTablet;
+    }
+    @include media($mobile) {
+      margin: 0 $sideMarginMobile;
+    }
+  }
+}
+.isHome {
+  margin-bottom: -5rem;
+  a {
+    color: $light;
+  }
+  .line {
+    stroke: $light;
+  }
+}

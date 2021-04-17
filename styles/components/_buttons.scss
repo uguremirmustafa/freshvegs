@@ -1,0 +1,23 @@
+@use '../abstracts' as *;
+@use '../base/variables' as *;
+
+//buttons
+@mixin btn($padY: 1rem, $padX: 1.5rem, $font: 1rem, $clr: $light, $bg: $dark) {
+  padding: $padY $padX;
+  font-weight: bold;
+  border: 2px solid $clr;
+  font-size: $font;
+  outline: none;
+  border-radius: $padY/2;
+  cursor: pointer;
+  background-color: $bg;
+  color: $clr;
+  &:hover {
+    background-color: $clr;
+    color: $bg;
+  }
+}
+.btn {
+  @include hover-lift();
+  @include btn();
+}

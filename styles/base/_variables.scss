@@ -1,0 +1,18 @@
+//breakpoints
+$mobile: 540px;
+$tablet: 768px;
+$laptop: 1080px;
+
+//spacings
+$sideMarginMobile: 1rem;
+$sideMarginTablet: 2rem;
+$sideMarginLaptop: 3rem;
+
+$spacings: (
+  'xs': 0.25rem,
+  'sm': 0.5rem,
+  'md': 0.75rem,
+  'lg': 1rem,
+  'xl': 1.25rem,
+  '2xl': 1.5rem,
+);
