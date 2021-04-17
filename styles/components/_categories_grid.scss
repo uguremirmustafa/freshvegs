@@ -6,7 +6,14 @@
   font-size: 5rem;
   margin-top: 10rem;
   margin-bottom: 10rem;
-  padding: 5rem 0;
+  padding: 10rem 0;
+  background-image: url('/images/bag.jpg');
+  background-color: rgba(1, 1, 1, 0.5);
+  background-blend-mode: color-burn;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position-y: center;
+  color: white;
   @include media($tablet) {
     font-size: 3rem;
   }

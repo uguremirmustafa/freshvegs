@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -34,7 +34,7 @@ export const ProcessElement = ({ index, image, title, text, height, width }) => 
     },
   };
   const controls = useAnimation();
-  const { ref, inView } = useInView({ threshold: 0.3 });
+  const { ref, inView } = useInView({ threshold: 0.9 });
   useEffect(() => {
     if (inView) {
       controls.start('animate');
@@ -43,6 +43,12 @@ export const ProcessElement = ({ index, image, title, text, height, width }) => 
       controls.start('initial');
     }
   }, [controls, inView]);
+  // const [scrollY, setScrollY] = useState(0);
+  // const handleScroll = () => setScrollY(window.pageYOffset);
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
   return (
     <motion.div
       ref={ref}
@@ -51,7 +57,14 @@ export const ProcessElement = ({ index, image, title, text, height, width }) => 
       animate={controls}
       className={`processElement processElement-${index}`}
     >
-      <Image src={image} width={width} height={height} objectFit="cover" alt="soil" />
+      <Image
+        className="processImage"
+        src={image}
+        width={width}
+        height={height}
+        objectFit="cover"
+        alt="soil"
+      />
       <div className="content">
         <h3>{title}</h3>
         <p>{text}</p>

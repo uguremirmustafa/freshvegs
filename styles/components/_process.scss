@@ -1,20 +1,21 @@
 @use '../base/variables' as *;
 @use '../abstracts' as *;
 .process {
-  margin-top: 10rem;
   min-height: 100vh;
-  background-color: rgb(255, 255, 255);
+  padding: 10rem 0;
   display: grid;
-  gap: 5rem;
+  gap: 10rem;
   grid-template-columns: 1fr $laptop 1fr;
   @include media($laptop) {
     grid-template-columns: $sideMarginLaptop 1fr $sideMarginLaptop;
   }
   @include media($tablet) {
     grid-template-columns: $sideMarginTablet 1fr $sideMarginTablet;
+    gap: 3rem;
   }
   @include media($mobile) {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
   grid-template-areas:
     '. item-1 .'
@@ -23,9 +24,13 @@
   .processElement {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 2rem;
+    padding: 4rem;
+    border-radius: 10px;
     gap: 5rem;
     place-items: center;
+    .processImage {
+      border-radius: 5px;
+    }
     .content {
       padding: 1rem 1rem 0 1rem;
     }
@@ -37,9 +42,17 @@
   }
   .processElement-1 {
     grid-area: item-1;
+    background-image: url('/images/soil.jpg');
+    background-color: rgba(white, 0.8);
+    background-blend-mode: saturation;
+    background-size: cover;
   }
   .processElement-2 {
     grid-area: item-2;
+    background-image: url('/images/sun-panel.jpg');
+    background-color: rgba(white, 0.7);
+    background-blend-mode: saturation;
+    background-size: cover;
     .content {
       order: -1;
       @include media($tablet) {
@@ -49,5 +62,9 @@
   }
   .processElement-3 {
     grid-area: item-3;
+    background-image: url('/images/field.jpg');
+    background-color: rgba(white, 0.7);
+    background-blend-mode: saturation;
+    background-size: cover;
   }
 }
