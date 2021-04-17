@@ -1,5 +1,8 @@
-This repository is NextJS with SCSS starter.
+FreshVegs is a landing page for a grocery market.
 
-> features
+> Tech Stack
 
-- 7-1 Folder structure from SASS architecture
+- NextJS
+- Vercel
+- Framer Motion for animations
+- SASS for styling
